@@ -43,6 +43,13 @@ def showing_data(win, draw, lose, match):
 			result.append('')
 	for i in range(0, len(result), 1):
 		print(result[i])
-	print(f'Số Trận: {match}'
+	print(f'Số Trận: {match}')
 	print(f'Thắng: {win} \ Hoà: {draw} Thua: {lose}')
 
+def func_input(play_again):
+	if (play_again == 'y') or (play_again == 'Y') or (play_again == 'Yes') or (play_again == 'yes') or (play_again == 'YES'):
+		return(True)
+	elif (play_again == 'n') or (play_again == 'N') or (play_again == 'No') or (play_again == 'no') or (play_again == 'NO'):
+		return(False)
+	else:
+		return('1')

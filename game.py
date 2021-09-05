@@ -70,15 +70,20 @@ while running:
 
 	print(downtext)
 	match = match + 1
-
+	test = True
+	
 	print('chơi tiếp hay không?: ')
-	while test_input == False:
+	while test:
 		play_again = str(input('Yes(y)/ No(n) \n'))
-		if (play_again == 'n') or (play_again == 'N'):
-			test_input = True
+		# WTF I'M I DOING
+		if func_input(play_again) == True:
+			test = False	
+		#PLEASE STOP DOING THAT HOÀNG 
+		elif func_input(play_again) == False:
+			test = False
 			running = False
-		elif (play_again == 'y') or (play_again == 'Y'):
-			Test_input = True
 		else:
-			test_input = False
+			print('"yes"; "YES"; "Yes"; "y"; "Y" nếu đồng ý chơi lại \n')
+			print('"no"; "NO"; "No"; "n"; "N" nếu muốn thoát \n')
+			test = True
 			
