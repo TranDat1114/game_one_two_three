@@ -27,7 +27,7 @@ def screen_clear():
       # for windows platfrom
 		_ = os.system('cls')
    
-def showing_data(win, draw, lose):
+def showing_data(win, draw, lose, match):
 	global dictData
 	# Data game
 	result = []
@@ -43,6 +43,6 @@ def showing_data(win, draw, lose):
 			result.append('')
 	for i in range(0, len(result), 1):
 		print(result[i])
-	
+	print(f'Số Trận: {match}'
 	print(f'Thắng: {win} \ Hoà: {draw} Thua: {lose}')
 
