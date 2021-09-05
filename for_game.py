@@ -60,4 +60,5 @@ def func_input(play_again):
 	elif (play_again == 'n') or (play_again == 'N') or (play_again == 'No') or (play_again == 'no') or (play_again == 'NO'):
 		return(False)
 	else:
+		# return này để khác với True và False
 		return('1')
