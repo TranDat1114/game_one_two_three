@@ -1,7 +1,7 @@
 import random
 from for_game import *
 
-#varible
+#Variables
 downtext = ' '
 text_won = 'Bạn Thắng Rồi!!!'
 text_lose = 'Bạn Thua Rồi!!!'
@@ -9,11 +9,12 @@ text_draw = 'Bạn Hoà Rồi!!!'
 win_point = 0
 lose_point = 0
 draw_point = 0
+match = 0
 running = True
 
 #Try to input values
 while running:
-	#varible
+	#Variables
 	number = 7
 	player = 0
 	draw_test = False
@@ -22,7 +23,7 @@ while running:
 	
 	while test_input:
 		screen_clear()
-		showing_data(win_point, draw_point, lose_point)
+		showing_data(win_point, draw_point, lose_point, match)
 		try:
 			player = int(input('Nhập vào một số tương ứng: '))
 		except ValueError:
@@ -68,9 +69,16 @@ while running:
 		lose_point = lose_point + 1
 
 	print(downtext)
+	match = match + 1
 
 	print('chơi tiếp hay không?: ')
-	play_again = str(input('Yes(y)/ No(n) \n'))
-	if play_again == 'n':
-		running = False
-		
+	while test_input == False:
+		play_again = str(input('Yes(y)/ No(n) \n'))
+		if (play_again == 'n') or (play_again == 'N'):
+			test_input = True
+			running = False
+		elif (play_again == 'y') or (play_again == 'Y'):
+			Test_input = True
+		else:
+			test_input = False
+			
