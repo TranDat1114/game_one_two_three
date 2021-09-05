@@ -1,7 +1,11 @@
+# Import thư viện OS là một thư viện có điều khiển terminal, hệ điều hành,... 
+# Trong ChuongTrinh này là cls (xoá màn hình) tương tự clrscr trong pascal
 import os
+# Thư viện time này mình không dùng trong chương trình, 
+#mình test xoá màn hình trong 5s nhưng quên xoá
 from time import sleep
-# The screen clear function
 
+# Tạo thư viện
 dictData = {
 		1 : 'Rock',
 		2 : 'Fire',
@@ -19,12 +23,13 @@ dictData = {
 		14: 'Lighting',
 		15: 'Gun'}
 
+# The screen clear function
 def screen_clear():
 	# for mac and linux(here, os.name is 'posix')
 	if os.name == 'posix':
 		_ = os.system('clear')
 	else:
-      # for windows platfrom
+	# for windows platfrom
 		_ = os.system('cls')
    
 def showing_data(win, draw, lose, match):
@@ -43,10 +48,13 @@ def showing_data(win, draw, lose, match):
 			result.append('')
 	for i in range(0, len(result), 1):
 		print(result[i])
+	# show match
 	print(f'Số Trận: {match}')
+	# show point
 	print(f'Thắng: {win} \ Hoà: {draw} Thua: {lose}')
 
-def func_input(play_again):
+# Mình dùng hàm func_input này để đỡ làm rối main program
+def func_input(play_again): 
 	if (play_again == 'y') or (play_again == 'Y') or (play_again == 'Yes') or (play_again == 'yes') or (play_again == 'YES'):
 		return(True)
 	elif (play_again == 'n') or (play_again == 'N') or (play_again == 'No') or (play_again == 'no') or (play_again == 'NO'):
